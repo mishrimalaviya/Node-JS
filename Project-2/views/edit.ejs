@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updatedata" method="post">
+        <input placeholder="id" name="srno" value="<%=ed.srno%>" hidden>
+        <input placeholder="enter the task" name="taskname" value="<%=ed.taskname%>">
+        <select name="prop">
+            <option value="high" <%= ed.prop === "high" ? "selected" : "" %> >High</option>
+            <option value="meduim" <%= ed.prop === "meduim" ? "selected" : "" %> >Medium</option>
+            <option value="low" <%= ed.prop === "low" ? "selected" : "" %> >Low</option>
+        </select>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
