@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit page</h1>
+    <form action="/update" method="POST">
+        <input placeholder="id" value="<%=newda.id%>" hidden name="id">
+        <input placeholder="edit name" value="<%=newda.name%>" name="name" >
+        <input placeholder="edit name" value="<%=newda.surname%>" name="surname">
+        <button type="submit">update</button>
+    </form>
+</body>
+</html>
