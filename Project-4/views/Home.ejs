@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book my show</h1>
+    <button><a href="/addbook">Books</a></button>
+
+    <table border="1" cellpadding="10px">
+        <tr>
+           <th>Id</th>
+            <th>Name of the book</th>
+            <th>Name of the author</th>
+            <th>price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%books.map((el,i)=>{%>
+            <tr>
+                <td><%=el.id%></td>
+                <td><%=el.name%></td>
+                <td><%=el.author%></td>
+                <td><%=el.price%></td>
+                <td><a href="/editbook?id=<%=el._id%>"><button>Edit</button></a></td>
+                <td><a href="/deletebook?id=<%=el._id%>"><button>Delete</button></a></td>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>
