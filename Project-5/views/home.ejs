@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- tailwind  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+    <section class="w-[100%] h-[100px] border d-flex justify-content-between align-items-center">
+        <h4>Home Page</h4>
+        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            aria-controls="offcanvasExample">
+            <i class="bi bi-list"></i>
+        </a>
+    </section>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="d-flex justify-content-between align-items-center flex-col">
+            <h3>Add list</h3><br><br>
+            <form action="/addMovie" method="post">
+                <input placeholder="enter the url" name="urls" class="border form-control"><br><br>
+                <input placeholder="enter the movie name" name="name" class="border form-control"><br><br>
+                <input placeholder="enter the categ" name="categ" class="border  form-control"><br><br>
+                <button type="submit" class="btn m-auto">Submit</button>
+            </form>
+        </div>
+    </div>
+    <section class="d-flex align-items-center justify-content-evenly w-[100%] h-auto flex-col">
+        <div>
+            <h1>Movie Shows</h1>
+        </div>
+        <div class="w-[100%] h-[auto] d-flex align-items-center justify-content-evenly">
+            <%dat.map((el,i)=>{%>
+                <div class="w-[15%] mt-[20px] h-[350px] border border-danger">
+                    <div class="w-[100%] h-[50%] border">
+                        <img src="<%=el.urls%>" class="w-[100%] h-[100%]">
+                    </div>
+                    <div>
+                        <p>
+                            <%=el.name%>
+                        </p>
+                        <p>
+                            <%=el.categ%>
+                        </p>
+                        <a href="/editmovie?id=<%=el.id%>"><button class="btn btn-secondary">Edit</button></a>
+                        <a href="/deletemovie?id=<%=el.id%>"><button class="btn btn-secondary">Delete</button></a>
+
+                    </div>
+                </div>
+                <%})%>
+        </div>
+    </section>
+</body>
+
+</html>

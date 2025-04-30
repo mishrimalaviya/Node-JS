@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Updating List</h1>
+    <form action="/updatemovie" method="post">
+        <input placeholder="id" hidden name="id" value="<%=update._id%>">
+        <input placeholder="enter the url" name="urls" value="<%=update.urls%>">
+        <input placeholder="enter the movie name" name="name" value="<%=update.name%>">
+        <input placeholder="enter the categ" name="categ" value="<%=update.categ%>">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
