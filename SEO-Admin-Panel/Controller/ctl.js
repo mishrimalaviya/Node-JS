@@ -12,7 +12,7 @@ module.exports.auth = async (req, res) => {
     }
 
     if (req.body.password == admin.password) {
-        res.cookie("admin", admin)
+        res.cookie("admins", admin)
         res.redirect("/dashboard")
     }
     else {
@@ -21,13 +21,13 @@ module.exports.auth = async (req, res) => {
 
 }
 module.exports.logout=(req,res)=>{
-    res.clearCookie("admin")
+    res.clearCookie("admins")
     res.redirect("/")
 }
 // aa je if condition ma che aa restickion lagadse ke jya sudhi email ne password same ny hoi database mathi ne cookie ma Storage thase toh j dashboard ma bakki login page ma j rai 
 module.exports.dashboard = (req, res) => {
     // cookie ni andr admin name ni key hoi toh aa dashboard ma jase or else home page 
-    if (req.cookies.admin) {
+    if (req.cookies.admins) {
         res.render("DashBoard")
     }
     else {
@@ -36,7 +36,7 @@ module.exports.dashboard = (req, res) => {
 
 }
 module.exports.Form = (req, res) => {
-    if (req.cookies.admin) {
+    if (req.cookies.admins) {
         res.render("Form")
 
     }
