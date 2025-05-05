@@ -1,0 +1,11 @@
+const multer = require("multer")
+const storage = multer.diskStorage({
+    destinationn: (req, file, cb) => {
+        cb(null, "uploads")
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + "-" + Date.now())
+    }
+})
+const uploads = multer({storage :storage}).single("profile")
+module.exports = uploads
