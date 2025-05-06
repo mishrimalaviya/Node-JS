@@ -11,5 +11,6 @@ route.get("/deletedata",ctl.delete)
 route.get("/edit",ctl.edits)
 route.post("/update",ctl.update)
 route.post("/addlogin",ctl.addlogin)
+route.get("/profile",ctl.profile)
 
 module.exports = route

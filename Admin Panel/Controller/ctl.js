@@ -79,3 +79,11 @@ module.exports.update = async (req, res) => {
             res.redirect("/viewadminpage")
         })
 }
+
+module.exports.profile = (req, res) => {
+    if (req.cookies.admin) {
+        let ad = req.cookies.admin
+        res.render("profile",{ad})
+
+    }
+}
