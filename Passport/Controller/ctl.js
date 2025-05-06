@@ -55,3 +55,7 @@ module.exports.updateAdmin = async (req, res) => {
             res.redirect("/table")
         })
 }
+
+module.exports.profile = (req,res)=>{
+    res.render("profile")
+}
