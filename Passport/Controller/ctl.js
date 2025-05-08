@@ -29,6 +29,8 @@ module.exports.table = async (req, res) => {
 }
 module.exports.addData = async (req, res) => {
     console.log(req.body)
+    console.log("File:", req.file); 
+    req.body.image = req.file.path
     await schema.create(req.body)
         .then(() => {
             res.redirect("/table")

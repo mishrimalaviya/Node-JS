@@ -30,6 +30,8 @@ a<!doctype html>
                 <thead>
                     <tr>
                         <th scope="col">Sr.no</th>
+                        <th scope="col">Profile</th>
+                        <th scope="col">Username</th>
                         <th scope="col">Email</th>
                         <th scope="col">password</th>
                         <th scope="col">Edit</th>
@@ -38,13 +40,15 @@ a<!doctype html>
                     <%ad.map((el,i)=>{%>
                       <tr>
                         <td><%=i+1%></td>
+                        <td><img src="<%=el.image%>" width="70px"  alt=""></td>
+                        <td><%=el.username%></td>
                         <td><%=el.email%></td>
                         <td><%=el.password%></td>
                         <td>
-                          <a href="/edit?id=<%=el.id%>"><button>Edit</button></a>
+                          <a href="/edit?id=<%=el.id%>"><button type="button" class="btn">Edit</button></a>
                         </td>
                         <td>
-                          <a href="/delete?id=<%=el.id%>"><button>Delete</button></a>
+                          <a href="/delete?id=<%=el.id%>"><button type="button" class="btn">Delete</button></a>
                         </td>
                       </tr>
                     <%})%>
