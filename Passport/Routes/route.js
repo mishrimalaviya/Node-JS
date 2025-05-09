@@ -15,5 +15,7 @@ route.post("/UpdateData", passport.Auth, ctl.updateAdmin)
 route.post("/login", passport.authenticate("local", { failureRedirect: "/" }), ctl.auth)
 route.get("/logout", ctl.logout)
 route.get("/profile", passport.Auth, ctl.profile)
+route.get("/changepass",passport.Auth,ctl.changepass)
+route.post("/changepassword",passport.Auth,ctl.updatepassword)
 
 module.exports = route
