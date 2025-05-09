@@ -6,6 +6,7 @@ module.exports.login = (req, res) => {
 // aa pela jose ke email nd passwrd same che if same hoi then aa cookie ma storage karse
 module.exports.auth = async (req, res) => {
     console.log(req.body)
+        req.flash("success","login successfully")
         res.redirect("/dashboard")
 }
 module.exports.logout=(req,res)=>{
