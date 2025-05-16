@@ -30,6 +30,8 @@ app.use(passport.initialize()) // passport connect
 app.use(connectFlash())
 app.use(flash.setFlash)
 app.use("/", require("./Routes/route"))
+app.use("/category",require("./Routes/Category"))
+app.use("/subcategory",require("./Routes/Subcategory"))
 
 app.listen(port, (err) => {
     err ? console.log(err) : console.log("Your server is created on the port " + port)
