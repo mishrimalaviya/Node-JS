@@ -43,7 +43,7 @@ passport.deserializeUser(async (adminId, done) => {
 
 passport.Auth = (req, res, next) => {
     if (req.isAuthenticated()) {
-        res.locals.admin = req.user
+        res.locals.admin = req.user  // aa chene jyre tare login no data ej ma access karvo hoi tyare .local use thase 
         next()
     }
     else {

@@ -20,34 +20,40 @@ a<!doctype html>
     <!--  Main wrapper -->
     <div class="body-wrapper">
       <!--  Header Start -->
- 
+  
       <!--  Header End -->
       <div class="container-fluid">
         <div class="card w-100 h-100 position-relative overflow-hidden">
           <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Show Data</h5>
             <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Sr.no</th>
-                <th scope="col">category Name</th>
-                <th scope="col">subcategory Name</th>
-                <th scope="col">image</th>
-             
-            </tr>
-            <%da.map((el,i)=>{%>
-                <tr>
-                    <td><%=i+1%></td>
-                    <td><%=el.categoryId.username%></td>
-                    <td><%=el.subname%></td>
-                    <td><img src="/<%=el.categoryId.image%>" width="20px"></td>
-                </tr>
-            <%})%>
-        </thead>
-        <tbody>
-               
-        </tbody>
-    </table>
+                <thead>
+                    <tr>
+                        <th scope="col">Sr.no</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Subcategory Name</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Image</th>    
+                        <th scope="col">Price</th>                        
+                    </tr>
+                    <%p.map((el,i)=>{%>
+                        <tr>
+                            <td><%=i+1%></td>
+                            <td><%=el.Productname%></td>
+                            <td><%=el.productId.subname%></td>
+                            <td><%=el.productId.categoryId.username%></td>
+                            <td>
+                              <img src="/<%=el.image%>" width="20px">
+                            </td>
+                            <td><%=el.price%></td>
+                        </tr>
+                   <%})%>
+                    
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
           </div>
         </div>
         <div class="py-6 px-6 text-center border ">
@@ -67,4 +73,3 @@ a<!doctype html>
 </body>
 
 </html>
-

@@ -30,13 +30,16 @@
                   <div class="card-body">
                     <form action="/subcategory/addSubCatedata" method="post">
                       <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">category</label>
-                        <input type="text" name="username" class="form-control" id="exampleInputEmail1"
-                          aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label">Sub-category</label>
+                        <input type="text" name="subname" class="form-control" id="exampleInputEmail1"
+                          aria-describedby="emailHelp"><br>
                       </div>
-                      <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                      <div class="mb-3">
+                        <select name="categoryId">
+                          <%data.map((el,i)=>{%>
+                            <option value="<%=el.id%>"><%=el.username%></option>
+                          <%})%>
+                        </select>
                       </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

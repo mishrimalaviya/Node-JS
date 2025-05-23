@@ -32,16 +32,15 @@ a<!doctype html>
                         <th scope="col">Sr.no</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Product Image</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
+                      
                     </tr>
                     <%da.map((el,i)=>{%>
-                        <tr>
-                            <td><%=i+1%></td>
-                            <td><%=el.username%></td>
-                            <td><%=el.image%></td>
-                        </tr>
-                  <%})%>
+                      <tr>
+                        <td><%=i+1%></td>
+                        <td><%=el.username%></td>
+                        <td><img src="/<%=el.image%>" width="20px"</td>
+                      </tr>
+                   <%})%>
                 </thead>
                 <tbody>
 
