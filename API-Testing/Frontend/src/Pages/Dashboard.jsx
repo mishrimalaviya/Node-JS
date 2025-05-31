@@ -6,6 +6,7 @@ function Dashboard() {
         <h1>dashboard</h1>
             <Link to={'/'}>Form</Link>
             <Link to={'/view'}>View data</Link>
+            <Link to={'/edit'}>edit</Link>
         </>
     )
 }

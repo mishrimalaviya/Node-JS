@@ -8,7 +8,7 @@ function Rout() {
             <Routes>
                 <Route path='/' element={<Form></Form>}></Route>
                 <Route path='/View' element={<View></View>}></Route>
-                <Route path='/edit' element={<Edit></Edit>}></Route>
+                <Route path='/edit/:id' element={<Edit></Edit>}></Route>
             </Routes>
         </>
     )

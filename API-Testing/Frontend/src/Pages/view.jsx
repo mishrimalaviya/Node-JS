@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Navigate , useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+
 
 function View() {
     let [showDatas, setdatas] = useState([])
     let navigate = useNavigate()
+    let [dataEdit,setdataEdit] =useState(null)
     useEffect(() => {
         axios.get("http://localhost:2001/showData")
             .then((res) => {
@@ -17,21 +19,15 @@ function View() {
         console.log(id)
         axios.delete(`http://localhost:2001/delete?id=${id}`)
             .then(() => {
-                    var delet = showDatas.filter((el,i)=>{
-                        console.log(el._id)
-                        if(el._id!=id)
-                        {
-                            return el
-                        }
-                    })
+                var delet = showDatas.filter((el, i) => {
+                    console.log(el._id)
+                    if (el._id != id) {
+                        return el
+                    }
+                })
 
-                    setdatas(delet)
+                setdatas(delet)
             })
-    }
-
-    function edit(id)
-    {
-        console.log(id)
     }
 
     return (
@@ -42,9 +38,10 @@ function View() {
                         <h1>{el.name}</h1>
                         <p>{el.city}</p>
                         <button onClick={() => dele(el._id)}>Delete</button>
-                        <button onClick={()=> edit(el._id)}>Edit</button>
+                        <Link to={`/edit/${el._id}`}><button>edit</button></Link>
                     </>
                 })
+
             }
         </>
     )
