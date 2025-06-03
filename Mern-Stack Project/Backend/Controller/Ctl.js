@@ -6,7 +6,12 @@ const jwt = require("jsonwebtoken")
 // after that make  make the password brypt  after that you store data with brypt password so noone can read your password 
 // or if user is false it came in the await schemas create nd post the data into database
 module.exports.Register = async(req,res)=>{
+    
+    if (!req.body.name ||!req.body.email || !req.body.password) {
+        return res.status(400).json({ msg: "All fields are required" , code:404 });
+    }
     let users = await schema.findOne({email : req.body.email})
+
     if(users)
     {
         // this msj is shown on the api testing tool (postman)
@@ -25,6 +30,10 @@ module.exports.Register = async(req,res)=>{
 // see pela aama check karse ke email che ( admin thrugh) jo no hoi ne toh msj karse ke emzil not found if hoi toh pachi pasword check thase nd bei equal hase ne toh token create thase if password wrong hase toh password wrong no msj aavse 
 module.exports.login = async(req,res)=>{
     console.log(req.body)
+    if(!req.body.email || !req.body.password)
+    {
+        return res.status(404).json({msg :"email nd password are must be required" , code :404})
+    }
     let users = await schema.findOne({email:req.body.email})
     if(!users)
     {
