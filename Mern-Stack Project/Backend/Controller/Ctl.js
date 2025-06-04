@@ -50,9 +50,10 @@ module.exports.login = async(req,res)=>{
     }
 }
 
-// module.exports.addAdmin =async(req,res)=>{
-//     await schema.find({})
-//     .then((dat)=>{
-//         res.status(200).json({msg:"all data is here",data:dat})
-//     })
-// }
+module.exports.addAdmin =async(req,res)=>{
+    await schema.find({})
+    .then((dat)=>{
+        console.log(dat)
+        res.status(200).json({msg:"all data is here",data:dat})
+    })
+}
