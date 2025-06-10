@@ -53,7 +53,8 @@ function Login() {
                 <input placeholder="enter the pasword" onChange={change} name="password"></input>
                 <input type="submit"></input>
             </form><br></br>
-            <Link to={'/Register'}>Register Page</Link>
+            <Link to={'/Register'}>Register Page</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+           
         </>
     )
 }

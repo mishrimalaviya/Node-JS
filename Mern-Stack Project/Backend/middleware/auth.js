@@ -12,9 +12,8 @@ const auth = (req,res,next)=>{
     // if token madi jai pachi aa token ne decode karsu 
 // aaj token ne decode karva mate verify use thase je frontend ma create kariyu hatu ne ee 
     let decode = jwt.verify(token,"mishri")
-    // console.log(decode)
-    req.user = decode
-    console.log(req.user)
+    console.log(decode)
+    req.user = decode.users
     next()
 
 }

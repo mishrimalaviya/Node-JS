@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 function Form() {
     var [product, setproduct] = useState({
+        image :"",
         name: "",
         title: "",
         price: ""
@@ -28,6 +29,7 @@ function Form() {
 
             })
         setproduct({
+            image:"",
             name: "",
             title: "",
             price: ""
@@ -41,7 +43,8 @@ function Form() {
             <Navbar></Navbar>
             <h1>Product Form</h1>
             <form onSubmit={productSubmit}>
-                <input placeholder="enter the product name" onChange={datas} name="name" value={product.name}></input>
+                <input placeholder="Enter the Product Image" onChange={datas} name="image" value={product.image} ></input>
+                <input placeholder="Enter the Product Name" onChange={datas} name="name" value={product.name}></input>
                 <input placeholder="enter the Title" onChange={datas} name="title" value={product.title}></input>
                 <input placeholder="enter the price" onChange={datas} name="price" value={product.price}></input>
                 <input type="submit"></input>

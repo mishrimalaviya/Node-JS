@@ -5,6 +5,8 @@ import Dashboard from "../Pages/Dashboard"
 import Form from "../Pages/Form"
 import ShowData from "../Pages/ShowData"
 import Edit from "../Pages/Edit"
+import Changepassword from "../Pages/Changepassword"
+
 
 function Rout()
 {
@@ -17,6 +19,7 @@ function Rout()
                 <Route path="/Form" element={<Form></Form>}></Route>
                 <Route path="/ShowData" element={<ShowData></ShowData>}></Route>
                 <Route path="/edit/:id" element={<Edit></Edit>}></Route>
+                <Route path="/Changepassword" element={<Changepassword></Changepassword>}></Route>
             </Routes>
         </>
     )

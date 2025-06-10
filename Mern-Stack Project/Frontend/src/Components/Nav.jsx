@@ -8,7 +8,7 @@ function Navbar()
             <Link to={"/Dashboard"}>Dashboard</Link><br></br>
             <Link to={"/Form"}>form</Link><br></br>
             <Link to={"/ShowData"}>Show data</Link><br></br>
-
+            <Link to={"/Changepassword"}>Changepassword</Link>
         </>
     )
 }
